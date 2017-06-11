@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Properties for the item list text-->
+    <dimen name="text_padding">8dp</dimen>
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="text_width">100dp</dimen>
+    <dimen name="image_dimens">40dp</dimen>
+
+    <!-- CardView Dimensions -->
+    <dimen name="cornerRadiusCardView">5dp</dimen>
+    <dimen name="marginLeftAndRightCardView">16dp</dimen>
+    <dimen name="marginTopAndBottomCardView">8dp</dimen>
+</resources>
