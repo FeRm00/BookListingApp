@@ -8,4 +8,7 @@
     <string name="no_internet_connection">No internet connection.</string>
     <string name="no_books">No books found.</string>
 
+    <!-- Help test to check the design -->
+    <string name="help_tittle">Las Aventuras de Don Quijote de la Mancha</string>
+    <string name="help_author">Miguel de Cervantes</string>
 </resources>

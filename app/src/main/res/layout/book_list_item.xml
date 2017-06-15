@@ -41,8 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/textInputStyle"
-                tools:text="Las Aventuras de Don Quijote de la Mancha"
-                />
+                tools:text="@string/help_tittle" />
 
         </LinearLayout>
 
@@ -67,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/text_padding"
-                tools:text="Miguel de Cervantes" />
+                tools:text="@string/help_author" />
 
         </LinearLayout>
     </LinearLayout>
