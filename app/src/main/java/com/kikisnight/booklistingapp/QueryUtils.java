@@ -127,6 +127,9 @@ public final class QueryUtils {
         // Create an empty ArrayList that we can start adding earthquakes to
         List<Book> books = new ArrayList<>();
 
+        //Define String author
+        String author = "";
+
         // If the JSON string is empty or null, then return early.
         if (TextUtils.isEmpty(bookJSON)) {
             return null;
@@ -146,9 +149,16 @@ public final class QueryUtils {
                 JSONObject currentBook = bookArray.getJSONObject(i);
                 JSONObject volumeInfo = currentBook.getJSONObject("volumeInfo");
                 String tittle = volumeInfo.getString("title");
-                JSONArray authorsArray = volumeInfo.getJSONArray("authors");
 
-                String author = obtainAuthors(authorsArray);
+
+                //Check if authors fields exists before parsing the information
+                if (volumeInfo.has("authors")){
+                    JSONArray authorsArray = volumeInfo.getJSONArray("authors");
+                    author = obtainAuthors(authorsArray);
+                } else {
+                    author = "Unknown Author";
+                }
+
 
                 JSONObject accessInfo = currentBook.getJSONObject("accessInfo");
                 String url = accessInfo.getString("webReaderLink");

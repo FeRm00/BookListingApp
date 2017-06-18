@@ -98,14 +98,6 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
         // Find a reference to the {@link ListView} in the layout
         ListView bookListView = (ListView) findViewById(R.id.list);
 
-        //Prepare the loader and the listView for another search
-        if(bookListView!=null) {
-            //Clean the ListView for another search
-            bookListView.setAdapter(null);
-            //Restart the loader for another search
-            getLoaderManager().restartLoader(0, null, this);
-        }
-
         mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
         bookListView.setEmptyView(mEmptyStateTextView);
 
@@ -150,7 +142,12 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
             // Initialize the loader. Pass in the int ID constant defined above and pass in null for
             // the bundle. Pass in this activity for the LoaderCallbacks parameter (which is valid
             // because this activity implements the LoaderCallbacks interface).
-            loaderManager.initLoader(BOOK_LOADER_ID, null, this);
+            if(loaderManager.getLoader(BOOK_LOADER_ID) == null) {
+                loaderManager.initLoader(BOOK_LOADER_ID, null, this);
+            } else {
+                //Prepare the loader and the listView for another search
+                loaderManager.restartLoader(BOOK_LOADER_ID, null, this);
+            }
         } else {
             // Otherwise, display error
             // First, hide loading indicator so error message will be visible
